@@ -1,8 +1,23 @@
-html,
 body {
-  min-width: 290px;
-  color: #000;
-  background-color: #ffffff;
-  font-family: 'Open Sans', Arial, sans-serif;
   line-height: 1.5;
+  display: grid;
+  grid-gap: 3px;
+  grid-template-columns: 300px auto;
+  margin: 20px;
+}
+
+nav {
+  background-color: lightcyan;
+  padding: 20px;
+}
+
+main {
+  background-color: lightskyblue;
+  padding: 20px;
+}
+
+@media only screen and (max-width: 800px) {
+  body {
+    grid-template-columns: auto;
+  }
 }
