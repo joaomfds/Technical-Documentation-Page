@@ -1,3 +1,6 @@
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,14 +16,13 @@
   <nav id="navbar">
     <header>CSS Documentation</header>
     <ul>
-      <a href="#Introduction" class="nav-link"></a>
-      <a class="nav-link" href="#What_is_CSS" rel="internal">
+      <a class="nav-link" href="#What_is_CSS?" rel="internal">
         <li>What is CSS?</li>
       </a>
-      <a class="nav-link" href="#How_does_CSS_affect_HTML" rel="internal">
+      <a class="nav-link" href="#How_does_CSS_affect_HTML?" rel="internal">
         <li>How does CSS affect HTML?</li>
       </a>
-      <a class="nav-link" href="#CSS_syntax" rel="internal">
+      <a class="nav-link" href="#How_does_CSS_actually_work?" rel="internal">
         <li>How does CSS actually work?</li>
       </a>
       <a class="nav-link" href="#About_the_DOM" rel="internal">
@@ -30,13 +32,13 @@
         <li>How to apply your CSS to your HTML
         </li>
       </a>
-      <a class="nav-link" href="#What_is_next" rel="internal">
+      <a class="nav-link" href="#What's_next" rel="internal">
         <li>What's next</li>
       </a>
     </ul>
   </nav>
   <main id="main-doc">
-    <section class="main-section" id="Introduction">
+    <section class="main-section" id="What_is_CSS?">
       <header>What is CSS?</header>
       <article>
         <p>As we have mentioned before, CSS is a language for specifying how documents are presented to users — how they are
@@ -46,6 +48,343 @@
         <p>Presenting a document to a user means converting it into a usable form for your audience. Browsers, like Firefox,
           Chrome or Internet Explorer, are designed to present documents visually, for example, on a computer screen, projector
           or printer.</p>
+      </article>
+    </section>
+
+    <section class="main-section" id="How_does_CSS_affect_HTML?">
+      <header>How does CSS affect HTML?</header>
+      <article>
+        <p>Web browsers apply
+          <strong>CSS rules</strong> to a document to affect how they are displayed. A CSS rule is formed from:</p>
+
+        <ul>
+          <li>A set of
+            <a href="/en-US/docs/Glossary/property/CSS" title="properties: A CSS property is a characteristic (like color) whose associated value defines one aspect of how the browser should display the element."
+              class="glossaryLink">properties</a>, which have values set to update how the HTML content is displayed, for example
+            <em>I want my element's width to be 50% of its parent element, and its background to be red</em>.</li>
+          <li>A
+            <a href="/en-US/docs/Glossary/CSS_Selector" title="selector: A CSS selector is the part of a CSS rule that describes what elements in a document the rule will match. The matching elements will have the rule's specified style applied to them."
+              class="glossaryLink">selector</a>, which
+            <em>selects</em> the element(s) you want to apply the updated property values to. For example,
+            <em>I want to apply my CSS rule to all the paragraphs in my HTML document</em>.</li>
+        </ul>
+
+        <p>A set of CSS rules contained within a
+          <strong>stylesheet</strong> determines how a webpage should look. You will learn a lot more about what CSS syntax looks
+          like in the next article of the module —
+          <a href="/en-US/docs/Learn/CSS/Introduction_to_CSS/Syntax">CSS Syntax</a>.</p>
+
+        <h3 id="A_quick_CSS_example">A quick CSS example</h3>
+
+        <p>The above descriptions may or may not have made sense, so let's make sure things are clear by presenting a quick
+          example. First of all, let's take a simple HTML document, containing an
+          <a href="/en-US/docs/Web/HTML/Element/h1" title="Heading elements implement six levels of document headings, &lt;h1> is the most important and &lt;h6> is the least. A heading element briefly describes the topic of the section it introduces. Heading information may be used by user agents, for example, to construct a table of contents for a document automatically.">
+            <code>&lt;h1&gt;</code>
+          </a> and a
+          <a href="/en-US/docs/Web/HTML/Element/p" title="The HTML &lt;p> element represents a paragraph of text.">
+            <code>&lt;p&gt;</code>
+          </a> (notice that a stylesheet is applied to the HTML using a
+          <a href="/en-US/docs/Web/HTML/Element/link" title="The HTML &lt;link> element specifies relationships between the current document and an external resource. Possible uses for this element include defining a relational framework for navigation. This element is most used to link to style sheets.">
+            <code>&lt;link&gt;</code>
+          </a> element):</p>
+        <code>
+          <pre class="brush: html">&lt;!DOCTYPE html&gt;
+        &lt;html&gt;
+          &lt;head&gt;
+            &lt;meta charset="utf-8"&gt;
+            &lt;title&gt;My CSS experiment&lt;/title&gt;
+            &lt;link rel="stylesheet" href="style.css"&gt;
+          &lt;/head&gt;
+          &lt;body&gt;
+            &lt;h1&gt;Hello World!&lt;/h1&gt;
+            &lt;p&gt;This is my first CSS example&lt;/p&gt;
+          &lt;/body&gt;
+        &lt;/html&gt;
+        </pre>
+        </code>
+        <p>Now let's look at a very simple CSS example containing two rules:</p>
+        <code>
+          <pre class="brush: css">h1 {
+          color: blue;
+          background-color: yellow;
+          border: 1px solid black;
+        }
+        
+        p {
+          color: red;
+        }</pre>
+
+        </code>
+        <p>Now let's look at a very simple CSS example containing two rules:</p>
+        <code>
+          <pre class="brush: css">h1 {
+            color: blue;
+            background-color: yellow;
+            border: 1px solid black;
+          }
+          
+          p {
+            color: red;
+          }</pre>
+        </code>
+        <p>The first rule starts with an
+          <code>h1</code> selector, which means that it will apply its property values to the
+          <a href="/en-US/docs/Web/HTML/Element/h1" title="Heading elements implement six levels of document headings, &lt;h1> is the most important and &lt;h6> is the least. A heading element briefly describes the topic of the section it introduces. Heading information may be used by user agents, for example, to construct a table of contents for a document automatically.">
+            <code>&lt;h1&gt;</code>
+          </a> element. It contains three properties and their values (each property/value pair is called a
+          <strong>declaration</strong>):</p>
+
+        <ol>
+          <li>The first one sets the text color to blue.</li>
+          <li>The second sets the background color to yellow.</li>
+          <li>The third one puts a border around the header that is 1 pixel wide, solid (not dotted, or dashed, etc.), and colored
+            black.
+          </li>
+        </ol>
+
+        <p>The second rule starts with a
+          <code>p</code> selector, which means that it will apply its property values to the
+          <a href="/en-US/docs/Web/HTML/Element/p" title="The HTML &lt;p> element represents a paragraph of text.">
+            <code>&lt;p&gt;</code>
+          </a> element. It contains one declaration, which sets the text color to red.</p>
+
+        <p>In a web browser, the code above would produce the following output:</p>
+
+        <p>
+          <img src="https://mdn.mozillademos.org/files/12537/first-example.png" alt="A simple webpage containing a header of Hello World, and a paragraph that says This is my first CSS example"
+            style="display: block; margin: 0 auto;">
+        </p>
+
+        <p>This isn't too pretty, but at least it starts to give you an idea of how CSS works.</p>
+      </article>
+    </section>
+
+    <section class="main-section" id="How_does_CSS_actually_work?">
+      <header>How does CSS actually work?</header>
+      <article>
+        <p>When a browser displays a document, it must combine the document's content with its style information. It processes
+          the document in two stages:</p>
+
+        <ol>
+          <li>The browser converts
+            <a href="/en-US/docs/Glossary/HTML" title="HTML: HTML (HyperText Markup Language) is a descriptive language that specifies webpage structure."
+              class="glossaryLink">HTML</a> and
+            <a href="/en-US/docs/Glossary/CSS" title="CSS: CSS (Cascading Style Sheets) is a declarative language that controls how webpages look in the browser."
+              class="glossaryLink">CSS</a> into the
+            <a href="/en-US/docs/Glossary/DOM" title="DOM: The DOM (Document Object Model) is an API that represents and interacts with any HTML or XML document. The DOM is a document model loaded in the browser and representing the document as a node tree, where each node represents part of the document (e.g. an element, text string, or comment)."
+              class="glossaryLink">DOM</a> (
+            <em>Document Object Model</em>). The DOM represents the document in the computer's memory. It combines the document's
+            content with its style.</li>
+          <li>The browser displays the contents of the DOM.</li>
+        </ol>
+
+        <p>
+          <img src="https://mdn.mozillademos.org/files/11781/rendering.svg" alt="" style="height: auto; max-width: 635px; width: 100%;">
+        </p>
+      </article>
+    </section>
+
+
+    <section class="main-section" id="About_the_DOM">
+      <header>About the DOM</header>
+      <article>
+        <p>A DOM has a tree-like structure. Each element, attribute and piece of text in the markup language becomes a
+          <a href="/en-US/docs/Glossary/Node/DOM" title="DOM node: In the context of the DOM, a node is a single point in the node tree. Various things that are nodes are the document itself, elements, text, and comments."
+            class="glossaryLink">DOM node</a> in the tree structure. The nodes are defined by their relationship to other DOM nodes. Some elements
+          are parents of child nodes, and child nodes have siblings.</p>
+
+        <p>Understanding the DOM helps you design, debug and maintain your CSS because the DOM is where your CSS and the document's
+          content meet up.</p>
+
+        <h3 id="DOM_representation">DOM representation</h3>
+
+        <p>Rather than a long, boring explanation, let's take an example to see how the DOM and CSS work together.</p>
+
+        <p>Let's assume the following HTML code:</p>
+
+        <pre class="brush: html">&lt;p&gt;
+  Let's use:
+  &lt;span&gt;Cascading&lt;/span&gt;
+  &lt;span&gt;Style&lt;/span&gt;
+  &lt;span&gt;Sheets&lt;/span&gt;
+&lt;/p&gt;
+</pre>
+
+        <p>In the DOM, the node corresponding to our
+          <code>&lt;p&gt;</code> element is a parent. Its children are a text node and the nodes corresponding to our
+          <code>&lt;span&gt;</code> elements. The
+          <code>SPAN</code> nodes are also
+          <span style="background-color: #f5f6f5;">parents</span>, with text nodes as their children:</p>
+
+        <pre>P
+├─ "Let's use:"
+├─ SPAN
+|  └─ "Cascading"
+├─ SPAN
+|  └─ "Style"
+└─ SPAN
+   └─ "Sheets"
+</pre>
+
+        <p>This is how a browser interprets the previous HTML snippet —it renders the above DOM tree and then outputs it in
+          the browser like so:</p>
+
+        <p>
+          <iframe src="https://mdn.mozillademos.org/en-US/docs/Learn/CSS/Introduction_to_CSS/How_CSS_works$samples/DOM_representation?revision=1359419"
+            class="live-sample-frame sample-code-frame" height="55" width="100%" id="frame_DOM_representation" frameborder="0"></iframe>
+        </p>
+
+        <div class="hidden">
+          <pre class="brush: css">p {margin:0;}</pre>
+        </div>
+
+        <h3 id="Applying_CSS_to_the_DOM">Applying CSS to the DOM</h3>
+
+        <p>Let's say we added some CSS to our document, to style it. Again, the HTML is as follows:</p>
+
+        <pre class="brush: html">&lt;p&gt;
+  Let's use:
+  &lt;span&gt;Cascading&lt;/span&gt;
+  &lt;span&gt;Style&lt;/span&gt;
+  &lt;span&gt;Sheets&lt;/span&gt;
+&lt;/p&gt;</pre>
+
+        <p>If we apply the following CSS to it:</p>
+
+        <pre class="brush: css">span {
+  border: 1px solid black;
+  background-color: lime;
+}</pre>
+
+        <p>The browser will parse the HTML and create a DOM from it, then parse the CSS. Since the only rule available in the
+          CSS has a
+          <code>span</code> selector, it will apply that rule to each one of the three spans. The updated output is as follows:</p>
+
+        <p>
+          <iframe src="https://mdn.mozillademos.org/en-US/docs/Learn/CSS/Introduction_to_CSS/How_CSS_works$samples/Applying_CSS_to_the_DOM?revision=1359419"
+            class="live-sample-frame sample-code-frame" height="55" width="100%" id="frame_Applying_CSS_to_the_DOM" frameborder="0"></iframe>
+        </p>
+      </article>
+    </section>
+    <section class="main-section" id="How_to_apply_your_CSS_to_your_HTML">
+      <header>How to apply your CSS to your HTML</header>
+      <article>
+        <p>There are three different ways to apply CSS to an HTML document that you'll commonly come across, some more useful
+          than others. Here we'll briefly review each one.</p>
+
+        <h3 id="External_stylesheet">External stylesheet</h3>
+
+        <p>You've already seen
+          <strong>external stylesheets</strong> in this article, but not by that name. An external stylesheet is when you have your
+          CSS written in a separate file with a
+          <code>.css</code> extension, and you reference it from an HTML
+          <a href="/en-US/docs/Web/HTML/Element/link" title="The HTML &lt;link> element specifies relationships between the current document and an external resource. Possible uses for this element include defining a relational framework for navigation. This element is most used to link to style sheets.">
+            <code>&lt;link&gt;</code>
+          </a> element. The HTML file looks something like this:</p>
+
+        <pre class="brush: html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;My CSS experiment&lt;/title&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello World!&lt;/h1&gt;
+    &lt;p&gt;This is my first CSS example&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+
+        <p>And the CSS file:</p>
+
+        <pre class="brush: css">h1 {
+  color: blue;
+  background-color: yellow;
+  border: 1px solid black;
+}
+
+p {
+  color: red;
+}</pre>
+
+        <p>This method is arguably the best, as you can use one stylesheet to style multiple documents, and would only need
+          to update the CSS in one place if changes were needed.</p>
+
+        <h3 id="Internal_stylesheet">Internal stylesheet</h3>
+
+        <p>An
+          <strong>internal stylesheet</strong> is where you don't have an external CSS file, but instead place your CSS inside a
+          <a href="/en-US/docs/Web/HTML/Element/style" title="The HTML &lt;style> element contains style information for a document, or part of a document.">
+            <code>&lt;style&gt;</code>
+          </a> element, contained inside the
+          <a href="/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML">HTML head</a>. So the HTML would look like this:</p>
+
+        <pre class="brush: html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;My CSS experiment&lt;/title&gt;
+    &lt;style&gt;
+      h1 {
+        color: blue;
+        background-color: yellow;
+        border: 1px solid black;
+      }
+
+      p {
+        color: red;
+      }
+    &lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello World!&lt;/h1&gt;
+    &lt;p&gt;This is my first CSS example&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+
+        <p>This can be useful in some circumstances (maybe you're working with a
+          <a href="/en-US/docs/Glossary/CMS" title="content management system: A CMS (Content Management System) is software that allows users to publish, organize, change, or remove various kinds of content, not only text but also embedded images, video, audio, and interactive code."
+            class="glossaryLink">content management system</a> where you can't modify the CSS files directly), but it isn't quite as efficient as
+          external stylesheets — in a website, the CSS would need to be repeated across every page, and updated in multiple
+          places if changes were required.</p>
+
+        <h3 id="Inline_styles">Inline styles</h3>
+
+        <p>
+          <strong>Inline styles</strong> are CSS declarations that affect one element only, contained within a
+          <code>
+            <a href="/en-US/docs/Web/HTML/Global_attributes#attr-style">style</a>
+          </code> attribute:</p>
+
+        <pre class="brush: html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;My CSS experiment&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1 style="color: blue;background-color: yellow;border: 1px solid black;"&gt;Hello World!&lt;/h1&gt;
+    &lt;p style="color:red;"&gt;This is my first CSS example&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+
+        <p>Please don't do this, unless you really have to! It is really bad for maintenance (you might have to update
+          <em>the same information</em> multiple times
+          <em>per document</em>), and it also mixes your presentational CSS information with your HTML structural information,
+          making the CSS harder to read and understand. Keeping your different types of code separated and pure makes for
+          a much easier job for all who work on the code.</p>
+
+        <p>The only time you might have to resort to using inline styles is when your working environment is really restrictive
+          (perhaps your CMS only allows you to edit the HTML body.)</p>
+      </article>
+    </section>
+
+    <section class="main-section" id="What's_next">
+      <header>What's next</header>
+      <article>
+        <p>At this point you should understand the basics of how CSS works, and how browsers deal with it. Next, you'll move
+          on to learn about
+          <a href="/en-US/docs/Learn/CSS/Introduction_to_CSS/Syntax">CSS syntax</a>.</p>
       </article>
     </section>
   </main>
