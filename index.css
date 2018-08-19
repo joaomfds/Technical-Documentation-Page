@@ -1,5 +1,11 @@
 body {
+  min-width: 300px;
+  color: #4d4e53;
+  background-color: #ffffff;
+  font-family: 'Open Sans', Arial, sans-serif;
   line-height: 1.5;
+  overflow: visible;
+  padding: 10px;
 }
 
 nav {
@@ -7,16 +13,16 @@ nav {
   width: 300px;
   height: 100%;
   position: fixed;
-  padding: 10px;
-  margin: 10px;
+  padding: 20px;
 }
 
 main {
   background-color: lightcyan;
   position: absolute;
-  padding: 10px;
-  margin: 10px;
   margin-left: 330px;
+  margin-right: 20px;
+  width: auto;
+  padding: 20px;
 }
 
 header {
@@ -31,17 +37,25 @@ header {
   text-align: left;
 }
 
-@media only screen and (max-width: 815px) {
+@media only screen and (max-width: 800px) {
   #navbar {
     position: absolute;
     top: 0;
-    width: 100%;
+    right: 0;
+    left: 0;
+    width: 90%;
     max-height: 220px;
+    padding: 20px;
+    margin: 20px;
   }
   main {
-    position: relative;
+    position: absolute;
+    top: 240;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    margin: 0px;
+    width: 90%;
     margin: 20px;
-    margin-top: 220px;
-    width: 100%;
   }
 }

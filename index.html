@@ -152,7 +152,7 @@
 
         <p>
           <img src="https://mdn.mozillademos.org/files/12537/first-example.png" alt="A simple webpage containing a header of Hello World, and a paragraph that says This is my first CSS example"
-            style="display: block; margin: 0 auto;">
+            style="display: block; margin: 0 auto; max-width: 100%; height: auto;">
         </p>
 
         <p>This isn't too pretty, but at least it starts to give you an idea of how CSS works.</p>
@@ -179,7 +179,8 @@
         </ol>
 
         <p>
-          <img src="https://mdn.mozillademos.org/files/11781/rendering.svg" alt="" style="height: auto; max-width: 635px; width: 100%;">
+          <img src="https://mdn.mozillademos.org/files/11781/rendering.svg" alt="" style="display: block; margin: 0 auto; max-width: 800px; height: auto;">
+
         </p>
       </article>
     </section>
@@ -363,8 +364,12 @@ p {
     &lt;title&gt;My CSS experiment&lt;/title&gt;
   &lt;/head&gt;
   &lt;body&gt;
-    &lt;h1 style="color: blue;background-color: yellow;border: 1px solid black;"&gt;Hello World!&lt;/h1&gt;
-    &lt;p style="color:red;"&gt;This is my first CSS example&lt;/p&gt;
+    &lt;h1 style="color: blue;
+    background-color: yellow;
+    border: 1px solid black;
+    "&gt;Hello World!&lt;/h1&gt;
+    &lt;p style="color:red;"&gt;
+    This is my first CSS example&lt;/p&gt;
   &lt;/body&gt;
 &lt;/html&gt;</pre>
 
